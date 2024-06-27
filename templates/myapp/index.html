@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Enhancer</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <script>
+        const csrfToken = '{{ csrf_token }}';
+    </script>
+</head>
+<body>
+    <div class="top-nav">
+        <h1>Audio Enhancer</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="audio-container">
+            <!-- Section for displaying original audio and its graph -->
+            <div class="audio-section">
+                <h2>Original Audio</h2>
+                <audio id="originalAudio" controls></audio>
+                <div id="originalGraph" class="audio-graph"></div>
+            </div>
+
+            <!-- Section for displaying enhanced audio and its graph -->
+            <div class="audio-section">
+                <h2>Enhanced Audio</h2>
+                <audio id="enhancedAudio" controls></audio>
+                <div id="enhancedGraph" class="audio-graph"></div>
+            </div>
+        </div>
+
+        <!-- Side menu for uploading and processing audio -->
+        <div class="side-menu">
+            <input type="file" id="audioUpload" accept="audio/*" onchange="handleAudioUpload(this)" style="display:none;">
+            <button class="side-button upload-button" onclick="document.getElementById('audioUpload').click();">
+                <span class="icon-placeholder">📤</span>Upload Audio
+            </button>
+            <button class="side-button" onclick="enhanceAudio()">Enhance Audio</button>
+        </div>
+    </div>
+
+    {% load static %}
+    <script src="{% static 'myapp/js/script.js' %}"></script>
+</body>
+</html>

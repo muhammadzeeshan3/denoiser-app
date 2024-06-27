@@ -1,0 +1,40 @@
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+api/migrations/
+staticfiles/
+
+
+# Backup files # 
+*.bak 
+
+# Jupyter Notebook 
+.ipynb_checkpoints 
+
+# Environments  
+venv/ 
+
+# mypy 
+.mypy_cache/ 
+
+
+# Visual Studio Code # 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json
+.history
+/static/admin/
+/static/rest_framework/
+
+.idea/*
+
+
+/staticfiles/
+/resemble_enhance/model_repo/
